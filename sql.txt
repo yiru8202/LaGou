@@ -1,0 +1,337 @@
+CREATE TABLE sites_admin (
+  said      INT PRIMARY KEY AUTO_INCREMENT
+  COMMENT '管理员编号',
+  sname     VARCHAR(20)
+  COMMENT '管理姓名也是登录账号',
+  spassword VARCHAR(20)
+  COMMENT '登录密码'
+);
+
+INSERT INTO sites_admin (sname, spassword) VALUES ('雷明钦', '96E79218965');
+
+CREATE TABLE company_user (
+  cid        INT(6) PRIMARY KEY                      AUTO_INCREMENT
+  COMMENT '会员编号id',
+  caccount   VARCHAR(10)
+  COMMENT '登陆账号',
+  cpassword  VARCHAR(20)
+  COMMENT '登录密码',
+  cname      VARCHAR(50)
+  COMMENT '公司名称',
+  ckind      VARCHAR(50)
+  COMMENT '所属行业',
+  caddress   VARCHAR(100)
+  COMMENT '-- 公司地址--',
+  ctype      VARCHAR(30)
+  COMMENT '-- 公司性质--',
+  curl       VARCHAR(50)
+  COMMENT '-- 公司网址--',
+  cpostal    VARCHAR(10)
+  COMMENT '-- 邮政编码--',
+  ccname     VARCHAR(20)
+  COMMENT '-- 联系人姓名',
+  cphone     VARCHAR(20)
+  COMMENT '-- 联系人手机号码',
+  cemail     VARCHAR(30)
+  COMMENT '-- 联系人邮箱',
+  cjob       VARCHAR(30)
+  COMMENT '-- 联系人职位',
+  cintroduce VARCHAR(2000)
+  COMMENT '-- 公司简介--',
+  cpicture   VARCHAR(30)
+  COMMENT '-- logo图片',
+  cnumber    VARCHAR(30)
+  COMMENT '-- 营业执照图片',
+  cdate      DATETIME
+  COMMENT '-- 申请时间'                                  DEFAULT CURRENT_TIMESTAMP,
+  ccheck     VARCHAR(20)
+  COMMENT '-- 账号状态(正常,锁定,拉黑.默认锁定)锁定状态下可以登录但不能发布招聘信息' DEFAULT '锁定'
+);
+
+CREATE TABLE SITES_ADMIN
+(
+  said      INT(6) PRIMARY KEY AUTO_INCREMENT,
+  sname     VARCHAR(20),
+  spassword VARCHAR(20),
+  susername VARCHAR(20),
+  semail    VARCHAR(30),
+  slogo     VARCHAR(20)
+);
+INSERT INTO sites_admin (SNAME, SPASSWORD, SUSERNAME, SEMAIL, SLOGO)
+VALUES ('萧敬腾', '21232F297A5', 'admin', 'qq@qq.com', '1.jsp');
+
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('6187532940', '96E79218965', '长沙拓鴻网咯科技有限公司', 'IT通信|电子|互联网',
+                 '长沙市雨花区湘府东路二段517号红星', '民营', 'http://qy.58.com/mq/49887442468631/', '410000', '朱总',
+                 '15575818769', 'xieshishun@163.com',
+   '人事部经理', '长沙拓鸿网络科技有限公司。是一家信誉优良、能力卓越的综合性投资咨询公司。 公司总部位于长沙市雨花区湘府东路。
+公司专注于提升成长型团队的管理水平和运营能力，强调其贴近实践，以务实的风格为个人和企业提供个性化、
+可操作性的系统解决方案。 我们成功入股多个交易中心，我们始终秉承以专业服务创市场，以诚信经营树品牌的经营理念。
+ 致力于成为中国最专业的投资咨询机构，把最具前瞻性的投资理念和投资机会带给客户，一切以客户的成长为最终根本、
+推动客户持续盈利、财富增值为目的。 公司目前正在新型运作，非常期待您的加入！', '101.jpg', '123456789012345');
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('5689742358', '96E79218965', '湖南艾美信息科技有限公司', '贸易|批发|零售|租赁业',
+                 '湖南省长沙县开元大道华润置地广场写字楼2206', '民营', 'http://t5847608412381709.5858.com/', '410000', '王小姐',
+                 '13828790991', 'wangxiaojie@163.com',
+   '人事部经理', '湖南艾美信息科技有限公司，创建于2017年，总部广州艾美信息科技有限公司创建于2015年8月，公司注册资本1000万元，
+注册地设长沙县经济技术开发区（国家级）。公司定位于便利店的招商加盟，着力构建社区全生态系统，为创业者解决资金和项目对接，打造共享融合的财富平台。', '102.jpg', '123685450123452');
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('8694236549', '96E79218965', '湖南壹站工程管理有限公司', '建筑/建材',
+                 '长沙岳麓区麓云路站梅溪湖创新中心28楼', '民营', 'http://t5846440806800400.5858.com', '410000', '钟金良',
+                 '18390989096', 'zhongjinliang@163.com',
+   '人事部经理', '湖南壹站工程管理有限公司（以下简称”壹站整装“）成立于2016年，是一家集办公室装饰设计、施工、家具、智能为一体
+的综合性企业，本着“时尚简约、人文科技”的设计理念，坚持在品质、环保、创新等方面，打造壹站个性品牌,
+以高性价比的产品.人性化的设计及完整的产品链，引领湖南办公装饰行业的潮流。', '103.jpg', '123456789015645');
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('4569278106', '96E79218965', '长沙灏海信息科技有限公司', '文化|传媒|娱乐|体育',
+                 '湖南省长沙市开福区万达广场C3座', '民营', 'http://qy.58.com/36791201716246/', '410000', '王总',
+                 '15575818769', 'wangzong@163.com',
+   '人事部经理', '本公司从事移动互联网IT领域数年，主打微信小程序的应用和推广，互联网.系国内主流趋势，但在湖南内地并未落到实处，
+新生朝阳行业本就属于年轻人的天下，上班八个小时，不加班，一月休息四到六天，国定假日正常休息，季度旅游为国内游，
+年度旅游为国外游，包吃住行纯玩。', '104.jpg', '123456789012345');
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('6920354876', '96E79218965', '长沙安乐房地产咨询有限公司', '中介/专业服务',
+                 '长沙芙蓉区五一中路129号碧云天大厦24D座', '民营', 'http://t5839318959747085.5858.com', '410000', '杨女士',
+                 '18670729990', 'yangnv@163.com',
+   '人事部经理', '长沙安乐房地产咨询有限公司成立于2014年，是一家专业从事房地产商业地产的代理公司，专业从事商业代理销售、
+商业招商、写字楼租赁买卖及商业门面租赁和买卖。我们已成功运营多个大型商业项目，现在长沙的商业地产中占一定
+的市场比例。公司竭力为员工提供理想的工作和晋升发展的机会，并为员工创造公平竞争的平台。如果你能适应公司的要求，
+付出真诚、思考和努力，你的工作必将得到公正的评价和丰厚的回报。公司对致力于房地产行业发展的精英人士，求贤若渴，
+只要您与我们志趣相投、只要您有实力和自信是房地产业界的精英、只要您渴望成就自我的人生价值，我们热枕欢迎您的加盟。', '105.jpg', '123456789012345');
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('5684102970', '96E79218965', '长沙市天心区鲁晋恒饮品商行', '贸易|批发|零售|租赁业',
+                 '长沙市暮云镇南托岭125公交车终点站', '民营', 'http://ljsp2016.5858.com', '410000', '孟经理', '18673542980',
+                 'mengjingli@163.com',
+   '人事部经理', '公司成立于2009年，现有工作人员20人，有700平方米大型仓库，公司拥有先进的采购，销售，库存管理系统，
+公司主营产品有：蒙牛系列，银鹭系列，南山牛奶系列，果秀罐头系列在市场上有很好的口碑，占据着很大的市场份额，
+是长沙南区最大的牛奶制品供应商。员工与各大厂家共同发展平台机会较多，并且公司每年都会组织优秀员工外派学习，
+旅游，时时帮助有困难的员工，让员工感受公司这个大家庭的关爱。', '106.jpg', '123456787812345');
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('5640207891', '96E79218965', '湖南锦辉铭商贸有限公司', '贸易|批发|零售|租赁业',
+                 '长沙市芙蓉区马王堆陶瓷建材城', '民营', 'http://t5837550039050253.5858.com', '410000', '朱小姐',
+                 '15576452680', 'zhuxiao@163.com',
+   '人事部经理', '佛山东鹏洁具股份有限公司始创于1994年，东鹏洁具专注于卫浴22年，是国内专业的综合型卫浴企业之一，全国500强企业。
+集设计研发、生产、销售和服务于一体，目前拥有六大系类产品线。东鹏洁具产品种类丰富，涵盖陶瓷洁具、浴室洁具、
+龙头五金、休闲卫浴、智能卫浴、厨房用品六大品类。东鹏洁具拥有佛山、江西以及江门鹤山3大生产基地、4大工厂，
+严格按照ISO9001体系建立完善的生产管理体系、质量管理体系和服务管理体系。', '107.jpg', '125456789012345');
+INSERT INTO company_user (caccount, cpassword, cname, ckind, caddress, ctype, curl, cpostal,
+                          ccname, cphone, cemail, cjob, cintroduce, cpicture, cnumber) VALUES
+  ('1547036790', '96E79218965', '湖南九亿互娱网络科技有限公司', 'IT通信|电子|互联网',
+                 '长沙天心区芙蓉中路汇金国际金座1501', '民营', 'http://t5847324068839179.5858.com', '410000', '何文清',
+                 '15574808726', 'hewenqing@163.com',
+   '人事部经理', '湖南九亿互娱网络科技有限公司，是中国网络游戏运营商之一，注册资本五百万，总部位于中国湖南省长沙市。湖南长沙，
+衡阳等各地分公司达到10家。通过互联网服务提升人类生活品质是互娱网络的使命。 目前，湖南九亿互娱把为用户
+提供“一站式在线生活服务”作为战略目标，提供互联网增值服务、移动及电信增值服务和网络广告服务。通过各种领先的
+网络平台，打造中国最大的网络社区，满足互联网用户沟通、资讯、娱乐和电子商务等方面的需求。', '108.jpg', '223456789012345');
+
+-- 3.职位信息表(job_message)
+CREATE TABLE job_message (
+  jmid       INT(6) PRIMARY KEY AUTO_INCREMENT, -- 编号
+  cid        INT(6), -- 所属公司
+  jname      VARCHAR(50), -- 职位名称
+  jcount     INT(6), -- 招聘人数
+  scid       INT(6), -- 所属行业
+  jsex       VARCHAR(20), -- 性别要求
+  jeducation VARCHAR(20), -- 学历要求
+  jother     VARCHAR(50), -- 其它要求
+  jsalary    VARCHAR(50), -- 薪资
+  jwelfare   VARCHAR(50), -- 福利
+  jaddress   VARCHAR(50), -- 工作地点
+  jcname     VARCHAR(20), -- 联系人
+  jphone     VARCHAR(20), -- 联系电话
+  jemail     VARCHAR(30), -- Email
+  jdate      DATETIME           DEFAULT CURRENT_TIMESTAMP, -- 发布时间
+  jcheck     VARCHAR(20)        DEFAULT '待审核'           -- 审核(待审核,审核通过,过期)
+);
+
+ALTER TABLE job_message
+  ADD CONSTRAINT company_user FOREIGN KEY (cid) REFERENCES company_user (cid);
+
+CREATE TABLE zero_classify (
+  zcid    INT(6) PRIMARY KEY AUTO_INCREMENT, -- 编号
+  zname   VARCHAR(30), -- 类别名称
+  fstatus INT(1)        DEFAULT '1'                -- 所属0级分类
+);
+
+INSERT INTO zero_classify (zname) VALUES ('IT通信|电子|互联网');
+INSERT INTO zero_classify (zname) VALUES ('金融业');
+INSERT INTO zero_classify (zname) VALUES ('房地产 | 建筑业');
+INSERT INTO zero_classify (zname) VALUES ('贸易 | 批发 | 零售 | 租赁业');
+INSERT INTO zero_classify (zname) VALUES ('生产 | 加工制造');
+INSERT INTO zero_classify (zname) VALUES ('服务业');
+INSERT INTO zero_classify (zname) VALUES ('文化 | 传媒 | 娱乐 | 体育');
+INSERT INTO zero_classify (zname) VALUES ('销售类');
+
+CREATE TABLE first_classify (
+  fcid    INT(6) PRIMARY KEY AUTO_INCREMENT, -- 编号
+  fname   VARCHAR(100), -- 类别名称
+  zcid    INT(6),
+  fstatus INT(1)        DEFAULT '1'
+);
+ALTER TABLE first_classify
+  ADD CONSTRAINT zero_classify FOREIGN KEY (zcid) REFERENCES zero_classify (zcid);
+
+INSERT INTO first_classify (fname, zcid) VALUES ('互联网', 1);
+INSERT INTO first_classify (fname, zcid) VALUES ('电子商务', 1);
+INSERT INTO first_classify (fname, zcid) VALUES ('计算机软件', 1);
+INSERT INTO first_classify (fname, zcid) VALUES ('计算机硬件', 1);
+INSERT INTO first_classify (fname, zcid) VALUES ('网络游戏', 1);
+INSERT INTO first_classify (fname, zcid) VALUES ('基金', 2);
+INSERT INTO first_classify (fname, zcid) VALUES ('证券', 2);
+INSERT INTO first_classify (fname, zcid) VALUES ('保险', 2);
+INSERT INTO first_classify (fname, zcid) VALUES ('银行', 2);
+INSERT INTO first_classify (fname, zcid) VALUES ('信托', 2);
+
+INSERT INTO first_classify (fname, zcid) VALUES ('建筑', 3);
+INSERT INTO first_classify (fname, zcid) VALUES ('建材', 3);
+INSERT INTO first_classify (fname, zcid) VALUES ('工程', 3);
+INSERT INTO first_classify (fname, zcid) VALUES ('家居', 3);
+INSERT INTO first_classify (fname, zcid) VALUES ('室内设计', 3);
+INSERT INTO first_classify (fname, zcid) VALUES ('装饰', 3);
+
+INSERT INTO first_classify (fname, zcid) VALUES ('贸易', 4);
+INSERT INTO first_classify (fname, zcid) VALUES ('进出口', 4);
+INSERT INTO first_classify (fname, zcid) VALUES ('零售', 4);
+INSERT INTO first_classify (fname, zcid) VALUES ('批发', 4);
+INSERT INTO first_classify (fname, zcid) VALUES ('租赁服务', 4);
+INSERT INTO first_classify (fname, zcid) VALUES ('销售', 4);
+
+INSERT INTO first_classify (fname, zcid) VALUES ('汽车', 5);
+INSERT INTO first_classify (fname, zcid) VALUES ('机电设备', 5);
+INSERT INTO first_classify (fname, zcid) VALUES ('加工制造', 5);
+INSERT INTO first_classify (fname, zcid) VALUES ('印刷', 5);
+INSERT INTO first_classify (fname, zcid) VALUES ('电子制造', 5);
+
+INSERT INTO first_classify (fname, zcid) VALUES ('医疗护理', 6);
+INSERT INTO first_classify (fname, zcid) VALUES ('美容保健', 6);
+INSERT INTO first_classify (fname, zcid) VALUES ('酒店餐饮', 6);
+INSERT INTO first_classify (fname, zcid) VALUES ('旅游度假', 6);
+INSERT INTO first_classify (fname, zcid) VALUES ('前台文员', 6);
+
+INSERT INTO first_classify (fname, zcid) VALUES ('媒体', 7);
+INSERT INTO first_classify (fname, zcid) VALUES ('出版', 7);
+
+-- 5,二级分类 (second_classify)
+CREATE TABLE second_classify (
+  scid     INT(6) PRIMARY KEY, -- 编号
+  sname    VARCHAR(30), -- 名称
+  fcid     INT(6), -- 所属一级分类
+  scstatus INT(1)        DEFAULT '1'
+);
+
+ALTER TABLE second_classify
+  ADD CONSTRAINT first_classify FOREIGN KEY (fcid) REFERENCES first_classify (fcid);
+
+-- 创建公司福利表
+CREATE TABLE company_benefits (
+  bid      INT(6) PRIMARY KEY, -- 编号
+  bsalary  VARCHAR(30), -- 薪酬激励
+  bwelfare VARCHAR(30), -- 员工福利
+  bcare    VARCHAR(30), -- 员工关怀
+  belse    VARCHAR(30)-- 其他
+);
+-- 创建公司与福利的关系表
+CREATE TABLE user_benefits (
+  cid INT(6),
+  bid INT(6)
+);
+ALTER TABLE user_benefits
+  ADD CONSTRAINT pk_cid_bid PRIMARY KEY (cid, bid);
+ALTER TABLE user_benefits
+  ADD FOREIGN KEY (cid) REFERENCES company_user (cid);
+ALTER TABLE user_benefits
+  ADD FOREIGN KEY (bid) REFERENCES company_benefits (bid);
+
+-- 求职者表
+CREATE TABLE JOBSEEKER (
+  JID        INT(8) PRIMARY KEY AUTO_INCREMENT, -- 用户id
+  EMAIL      VARCHAR(22) UNIQUE, -- 邮箱
+  PWD        VARCHAR(16), -- 密码
+  SEX        CHAR(2), -- 性别
+  JNAME      VARCHAR(16) UNIQUE, -- 昵称
+  AGE        INT(3), -- 年龄
+  EDUCATION  VARCHAR(10), -- 最高学历    页面给下拉静态数据 (初中及以下,高中,大专,本科,硕士及以上)
+  WORKTIME   VARCHAR(6), -- 工作年限   页面给下拉静态数据 （无经验,1年以下,1-3年,3-5年,5-10年,10年以上)
+  MOBILE     VARCHAR(13), -- 手机号码
+  CITY       VARCHAR(8), -- 所在城市
+  SEEKER_PIC VARCHAR(25)
+);
+
+INSERT INTO JOBSEEKER (EMAIL, PWD, SEX, JNAME, AGE, EDUCATION, WORKTIME, MOBILE, CITY, SEEKER_PIC)
+VALUES ('359772486@qq.com', '21232F297A5', '女', 'SOS团长', 17, '高中', '1-3年', '062-5779066', '霓虹', NULL);
+
+CREATE TABLE RESUME (
+  REID                 INT(5) PRIMARY KEY AUTO_INCREMENT, -- 主键
+  RNAME                VARCHAR(30), -- 简历名称
+  ALTERTIME            DATETIME, -- 修改时间
+  WANGTEDJOB           VARCHAR(16), -- 期待工作
+  WANGTEDSAL           VARCHAR(16), -- 期待月薪
+  COMPANY_NAME         VARCHAR(30), -- 曾经工作的公司名
+  JOBNAME              VARCHAR(20), -- 曾经工作的职位名
+  WORKBEGIN_YEAR       VARCHAR(4), -- 工作开始年份
+  WORKBEGIN_MONTH      VARCHAR(4), -- 工作开始的月份
+  WORKEND_YEAR         VARCHAR(4), -- 工作开始的年份
+  WORKEND_MONTH        VARCHAR(4), -- 工作开始的月份
+  SCOOLNAME            VARCHAR(25), -- 学校名称
+  EDUCATION_BACKGROUND VARCHAR(8), --  学历
+  MAJOR                VARCHAR(25), -- 专业
+  EDUBEGIN_YEAR        VARCHAR(4), -- 就读开始年份
+  EDUEND_YEAR          VARCHAR(4), -- 毕业年份
+  DES                  VARCHAR(1000)       -- 自我描述
+);
+
+-- 简历_职位关系表
+CREATE TABLE resume_job (
+  reid INT(5),
+  jid  INT(8)
+);
+
+-- 工作经历表
+CREATE TABLE work_record (
+  wid             INT(8) PRIMARY KEY, -- 主键
+  reid            INT(8), -- 外键
+  COMPANY_NAME    VARCHAR(30), -- 曾经工作的公司名
+  JOBNAME         VARCHAR(20), -- 曾经工作的职位名
+  WORKBEGIN_YEAR  VARCHAR(4), -- 工作开始年份
+  WORKBEGIN_MONTH VARCHAR(4), -- 工作开始的月份
+  WORKEND_YEAR    VARCHAR(4), -- 工作结束的年份
+  WORKEND_MONTH   VARCHAR(4)     -- 工作结束的月份
+);
+-- 项目经验表
+CREATE TABLE project_record (
+  pid                INT(8) PRIMARY KEY,
+  reid               INT(8),
+  wname              VARCHAR(30), -- 项目名称
+  wjob               VARCHAR(10), -- 项目职务
+  projectBEGIN_YEAR  VARCHAR(4), -- 项目开始年份
+  projectBEGIN_MONTH VARCHAR(4), -- 项目开始的月份
+  projectEND_YEAR    VARCHAR(4), -- 项目结束的年份
+  projectEND_MONTH   VARCHAR(4), -- 项目结束的月份
+  project_describe   VARCHAR(50)    -- 项目描述
+);
+-- 教育背景表
+CREATE TABLE edu_record (
+  eid                  INT(8) PRIMARY KEY,
+  reid                 INT(8),
+  SCOOLNAME            VARCHAR(25), -- 学校名称
+  EDUCATION_BACKGROUND VARCHAR(8), --  学历
+  MAJOR                VARCHAR(25), -- 专业
+  EDUBEGIN_YEAR        VARCHAR(4), -- 就读开始年份
+  EDUEND_YEAR          VARCHAR(4)      -- 毕业年份
+);
+-- 作品展示表
+CREATE TABLE work_show (
+  wsid          INT(8) PRIMARY KEY,
+  reid          INT(8),
+  work_link     VARCHAR(50), -- 作品链接
+  work_describe VARCHAR(100) -- 作品描述
+);
+
+
